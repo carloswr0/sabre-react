@@ -1,0 +1,25 @@
+.Searchbar {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+
+input, select {
+    min-width: 200px;
+    height: 25px;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+button {
+    height: 25px;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+

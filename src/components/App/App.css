@@ -1,0 +1,9 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10%;
+}
+
+h1 {
+  margin: 2rem 0px;
+}
