@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
-import './PlayersGrid.css';
+import './PlayersGrid.scss';
 
 class PlayersGrid extends Component {
+  
+  convertToAge(birthdate) {
+    const todaysYear = new Date().getUTCFullYear();
+    const playersBirthYear = new Date(birthdate).getUTCFullYear();
+    const playersAge = todaysYear - playersBirthYear;
+    return playersAge;
+  }
+
+  componentDidMount() {
+   
+  }
+  
   render() {
     const { players } = this.props;
     return (
@@ -22,7 +34,7 @@ class PlayersGrid extends Component {
                   <td>{player.name}</td>
                   <td>{player.position}</td>
                   <td>{player.nationality}</td>
-                  <td>{player.dateOfBirth}</td>
+                  <td>{this.convertToAge(player.dateOfBirth)}</td>
                 </tr>
               );
             })

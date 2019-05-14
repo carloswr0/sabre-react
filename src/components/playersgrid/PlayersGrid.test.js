@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import PlayersGrid from './PlayersGrid';
 
-describe('App Component', () => {
+describe('PlayersGrid Component', () => {
     it('It should render without error', () => {
-        const component = shallow(<App />);
+       
     });
-})
+});
