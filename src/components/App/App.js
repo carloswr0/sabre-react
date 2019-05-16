@@ -1,35 +1,21 @@
-import React, { Component } from 'react';
-import './App.scss';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actionCreators from '../../actions/actionCreator';
 
 // Components
-import PlayersGrid from '../playersgrid/PlayersGrid';
-import SearchBar from '../searchbar/SearchBar';
+import Main from '../Main/Main';
 
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      playerData: [],
-    };
-  }
-
-  async componentDidMount() {
-    const response = await fetch(`https://football-players-b31f2.firebaseio.com/players.json?print=pretty`);
-    const json = await response.json();
-    this.setState({ playerData: json });
-  }
-
-  render() {
-    const { playerData } = this.state;
-    return (
-      <div className="App">
-        <h1>Football Player Finder</h1>
-        <SearchBar></SearchBar>
-        <PlayersGrid players={playerData}></PlayersGrid>
-      </div>
-    );
-  }
+function mapStateToProps(state) {
+  return {
+    players: state.players,
+    filters: state.filter,
+  };
 }
+
+function mapDispachToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch);
+}
+
+const App = connect(mapStateToProps, mapDispachToProps)(Main);
 
 export default App;
