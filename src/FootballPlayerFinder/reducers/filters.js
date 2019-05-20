@@ -1,4 +1,4 @@
-import { FILTER_PLAYERS } from '../actions/actionCreator'
+import { FILTER_PLAYERS } from '../actionCreator'
 
 const initialState = {
 };

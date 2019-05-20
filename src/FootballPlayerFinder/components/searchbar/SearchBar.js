@@ -29,7 +29,7 @@ class SearchBar extends Component {
           <Grid item xs={12} sm={3}>
             <FormControl fullWidth>
               <InputLabel htmlFor="position">Position</InputLabel>
-              <Select onChange={e => this.props.handleChange(e, 'position')} value={this.props.position} fullWidth className="custom-select">
+              <Select onChange={e => this.props.handleChange(e, 'position')} value={this.props.position ? this.props.position : ""} fullWidth className="custom-select">
                 <MenuItem value="Position">Position</MenuItem>
                 <MenuItem value="Attacking Midfield">Attacking Midfield</MenuItem>
                 <MenuItem value="Central Midfield">Central Midfield</MenuItem>
@@ -45,7 +45,7 @@ class SearchBar extends Component {
             </FormControl>
           </Grid>
           <Grid item xs={12} sm={3} className="centered">
-            <Button  onClick={e => this.props.handleSubmit()} variant="contained" color="primary">
+            <Button onSubmit={e => this.props.handleSubmit()} onClick={e => this.props.handleSubmit()} variant="contained" color="primary">
               Search 
             </Button>
           </Grid>

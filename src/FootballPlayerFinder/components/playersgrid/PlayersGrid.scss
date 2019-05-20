@@ -1,0 +1,33 @@
+@media only screen and (max-width: 650px) {
+    .table-custom {
+        .table-head-row-custom {
+            display: none;
+        } 
+        .table-body-row-custom {
+            color: inherit;
+            height: auto; 
+            display: table-row;
+            outline: none;
+            vertical-align: middle;
+            display: flex;
+            flex-direction: column;
+         
+            .table-cell-custom {
+                border-bottom: 0px;
+            }
+            .table-cell-custom:last-child {
+                border-bottom: 2px solid rgba(224, 224, 224, 1);
+            }
+          
+        } 
+    }
+}
+
+
+tr:nth-child(even)  {
+    background-color: #00000026;
+}
+
+.table-head-custom {
+    background-color: #0000004f;
+}

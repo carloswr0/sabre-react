@@ -1,15 +1,18 @@
-import { FETCH_PLAYERS } from '../actions/actionCreator'
+import { FETCH_PLAYERS } from '../actionCreator';
+import { FETCH_PLAYERS_FAILURE } from '../actionCreator';
 
 const initialState = [];
 
-// a reducers takes 2 things, the action and a copy of the current state.
 function players(state = initialState, action) {
   switch(action.type) {
     case FETCH_PLAYERS:
       return [...state, ...action.payload];
-
+    
+    case FETCH_PLAYERS_FAILURE:
+      return state; 
+       
     default:
-      return state;
+      return state;   
   }
 }
 

@@ -18,12 +18,22 @@ class Main extends Component {
   }
   
   componentDidMount() {
-    this.props.getAllPlayers();
+    if(this.props.getAllPlayers) {
+      this.props.getAllPlayers();
+    }
   }
 
   handleChange(e, category) {
+    let value;
+    if(category === 'age') {
+      value = e.target.value.replace(/[^0-9]+/, '');
+    } else if (category === 'name'){
+      value = e.target.value.replace(/[^A-Za-z]+/, '');
+    } else if(category === 'position') {
+      value = e.target.value;
+    }
     this.setState({
-      [category]: e.target.value
+      [category]: value
     });
   }
 

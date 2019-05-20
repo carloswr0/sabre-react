@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 
 // Root Reducers
-import rootReducer from './reducers/index';
+import rootReducer from './FootballPlayerFinder/reducers/index';
 
 // Creates the store with our reducers and default state
 const store = createStore(
@@ -14,8 +14,8 @@ const store = createStore(
 ); 
 
 if(module.hot) {
-  module.hot.accept('./reducers/',() => {
-    const nextRootReducer = require('./reducers/index').default;
+  module.hot.accept('./FootballPlayerFinder/reducers/',() => {
+    const nextRootReducer = require('./FootballPlayerFinder/reducers/index').default;
     store.replaceReducer(nextRootReducer);
   });
 }
